@@ -29,7 +29,7 @@ Then
 ./randMedium.py graupel.txt 0.2 1 0.5 100 1 >graupel_0.5.dat
 #-----------------------------#
 where arguments mean:
-0.2 ~ tretradron size
+0.2 ~ tretrahedron size
 1   ~ number of separated parts (larger than 1 in case of aggregates)
 0.5 ~ density
 100 ~ k (inversely proportational to grain size)
@@ -57,8 +57,10 @@ Then similarly,
 ./randMedium.py snowflake.dat 0.2 1 0.5 100 1 >graupel_0.5.dat
 #-----------------------------#
 
-3) For generation from a msh file:
+3) For generation from other shpes (must be in .dat or .msh):
 Run
 #-----------------------------#
 ./randMedium.py anyShape.dat 0.2 1 0.5 100 1 >graupel_0.5.dat
+or
+./randMedium.py anyShape.msh 0.2 1 0.5 100 1 >graupel_0.5.dat
 #-----------------------------#

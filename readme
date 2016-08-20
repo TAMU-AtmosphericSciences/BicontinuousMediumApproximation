@@ -1,0 +1,64 @@
+The codes are for generating bicontinuous medium for graupel and snowflake.
+
+@ Guanglin Tang, 2016.08.19, Texas A&M University
+tang2013@tamu.edu
+
+Requirement:
+
+Python
+gmsh
+
+Tested for anaconda python/2.7.11 and gmsh/2.9.3-linux
+
+Usage:
+
+1) For graupel generation:
+Run
+#-----------------------------#
+./graupel.py 1.0 0.5 1.2 >graupel.txt
+#-----------------------------#
+where arguments mean:
+1.0 ~ C
+0.5 ~ a
+1.2 ~ lambda
+defined in
+Wang, P. K. (1982). Mathematical description of the shape of conical hydrometeors. Journal of the atmospheric sciences, 39(11), 2615-2622.
+
+Then
+#-----------------------------#
+./randMedium.py graupel.txt 0.2 1 0.5 100 1 >graupel_0.5.dat
+#-----------------------------#
+where arguments mean:
+0.2 ~ tretradron size
+1   ~ number of separated parts (larger than 1 in case of aggregates)
+0.5 ~ density
+100 ~ k (inversely proportational to grain size)
+1   ~ lp (variance of k)
+
+For detail, see
+Xu, X., Tsang, L., & Yueh, S. (2012). Electromagnetic models of co/cross polarization of bicontinuous/DMRT in radar remote sensing of terrestrial snow at X-and Ku-band for CoReH2O and SCLP applications. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 5(3), 1024-1032.
+
+graupel_0.5.dat can be inputed to IGOM code.
+
+In order to convert .dat file to .stl file, run
+#-----------------------------#
+./dat2stl.py graupel_0.5.dat >graupel_0.5.stl
+#-----------------------------#
+
+2) For snowflake generation:
+Run
+#-----------------------------#
+./fractalCrystal.py >snowflake.dat
+#-----------------------------#
+change beta, a1, a2 and L for your need (See Yang and Liou 1998 Fig 1b(left)).
+
+Then similarly,
+#-----------------------------#
+./randMedium.py snowflake.dat 0.2 1 0.5 100 1 >graupel_0.5.dat
+#-----------------------------#
+
+3) For generation from a msh file:
+Run
+#-----------------------------#
+./randMedium.py anyShape.dat 0.2 1 0.5 100 1 >graupel_0.5.dat
+#-----------------------------#

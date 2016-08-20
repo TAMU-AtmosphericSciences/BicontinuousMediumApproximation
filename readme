@@ -15,12 +15,13 @@ Usage:
 1) For graupel generation:
 Run
 #-----------------------------#
-./graupel.py 1.0 0.5 1.2 >graupel.txt
+./graupel.py 1.0 0.5 1.2 20 >graupel.txt
 #-----------------------------#
 where arguments mean:
 1.0 ~ C
 0.5 ~ a
 1.2 ~ lambda
+20  ~ Number of points
 defined in
 Wang, P. K. (1982). Mathematical description of the shape of conical hydrometeors. Journal of the atmospheric sciences, 39(11), 2615-2622.
 

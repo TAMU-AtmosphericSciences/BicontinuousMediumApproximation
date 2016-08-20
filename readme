@@ -1,9 +1,9 @@
-The codes are for generating bicontinuous medium for graupel and snowflake.
+The codes are for generating bicontinuous medium for graupel and snowflake, and other given shapes.
 
 @ Guanglin Tang, 2016.08.19, Texas A&M University
 tang2013@tamu.edu
 
-Requirement:
+Software requirements:
 
 Python
 gmsh
